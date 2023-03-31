@@ -57,9 +57,9 @@ function Form() {
         <Input onChange={(e) => {
           setBgg({ ...bgg, shortName: e.target.value })
         }} color={"black"} placeholder={"Institute Short Name"} />
-        <h5>Logo Image</h5>
+        <h5>Logo Image Url</h5>
         <Input onChange={(e) => {
-          setBgg({ ...bgg, institutename: e.target.value })
+          setBgg({ ...bgg, logoimageurl: e.target.value })
 
         }} color={"black"} placeholder={"Logo Image"} />
         <h5>NO Of Campus</h5>

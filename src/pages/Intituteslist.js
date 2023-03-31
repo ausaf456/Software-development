@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../Config/firebasemethods";
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Image } from "@mui/icons-material";
 // import * as React from 'react';
 
 
@@ -23,21 +24,25 @@ function Addinstitute (){
             <TableCell >Status</TableCell>
             <TableCell >NO of Campus</TableCell>
             <TableCell >Institute Type</TableCell>
+            <TableCell >Logo Image</TableCell>
          
           </TableRow>
         </TableHead>
         <TableBody>
-          {first.map((e) => (
+          {first.map((e,i) => (
             <TableRow
-              key={e.institutename}
+              key={i}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="e">
+              <TableCell >
                 {e.institutename}
               </TableCell>
               <TableCell >{e.CampusDetails}</TableCell>
               <TableCell >{e.NOOfCampus}</TableCell>
               <TableCell >{e.InstituteType}</TableCell>
+              <TableCell >
+              <a href={e.logoimageurl}>Preview Image</a>
+              </TableCell> 
            
             </TableRow>
           ))}
